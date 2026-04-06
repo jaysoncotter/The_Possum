@@ -87,3 +87,73 @@ Since this extension is not published on the Chrome Web Store, you'll install it
 **Step 1 — Download the files**
 
 Click the green **Code** button on this repo and select **Download ZIP**, then extract the ZIP to a folder on your computer. Or clone the repo:
+
+git clone https://github.com/jaysoncotter/The_Possum.git
+
+
+**Step 2 — Open Chrome Extensions**
+
+1. Open Google Chrome
+2. Type `chrome://extensions` in the address bar and press Enter
+3. Enable **Developer mode** using the toggle in the top-right corner
+
+**Step 3 — Load the extension**
+
+1. Click **Load unpacked**
+2. Navigate to the folder where you extracted/cloned the repo files
+3. Select the folder (the one containing `manifest.json`)
+4. Click **Select Folder**
+
+**Step 4 — Confirm installation**
+
+You should see **Possum Fetcher** appear in your extensions list with the paw print icon. If you see any errors, make sure all files from the repo are in the same folder.
+
+**Step 5 — Pin the extension (optional)**
+
+Click the puzzle piece icon in Chrome's toolbar, find Possum Fetcher, and click the pin icon to keep it visible.
+
+### How It Works
+
+Possum Fetcher runs automatically when you visit the Playing Possum page on possumfix.com. It fetches flight plan data from FlightAware in the background and passes it to the page for display. You don't need to click anything — it works on page load.
+
+### Updating
+
+When a new version is available, download the updated files and replace the old ones in the same folder. Then go to `chrome://extensions` and click the refresh icon on the Possum Fetcher card.
+
+---
+
+## PossumFix Pages
+
+| Page | URL | What It Does |
+|------|-----|-------------|
+| **PossumFix** | [possumfix.com](https://www.possumfix.com) | Phonetic search for ATC waypoints, fixes, and procedures |
+| **Playground** | [possumfix.com/playground.html](https://www.possumfix.com/playground.html) | Flight path map with altitude coloring and fix-by-fix data. Add `?callsign=AAL1487&date=2026-04-05` to jump directly to a specific flight and date. |
+| **Playing Possum** | [possumfix.com/playing.html](https://www.possumfix.com/playing.html) | Detailed flight plan view with full route, fix list, altitude/speed data, and date navigation. Requires the Possum Fetcher extension. |
+
+---
+
+## Typical Workflow
+
+1. **Paste the prompt** into your LLM session
+2. **Paste your Global Key** — the prompt parses airport, sector, date, and time
+3. **Enter a callsign** — the prompt verifies it and gives you clickable links:
+   - 🐾 **Playground** — see the flight path on a map for that exact date
+   - **FA** — FlightAware live page
+   - **FA HIST** — FlightAware last 80 flights
+   - **POSSUM OP** — operator/telephony lookup on PossumFix
+4. **Click the 🐾 link** to visually confirm the flight path passes through your airport's airspace
+5. **Search for fixes** if you hear a waypoint you're unsure about — the prompt builds a PossumFix search link
+6. **Paste your transcript line** — the prompt formats it and flags anything it can resolve
+
+---
+
+## Important Note
+
+This tool uses AI to assist with ATC transcription. AI can and does make mistakes, especially with aviation communications where models have limited training data. **Always verify results before submitting.** Use FlightAware, ADSBexchange, or the PossumFix Playground flight path map to confirm.
+
+---
+
+## License
+
+This project is provided as-is for ATC transcription assistance. Use at your own discretion.
+
